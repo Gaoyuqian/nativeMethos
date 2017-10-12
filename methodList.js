@@ -32,7 +32,7 @@
 */
 
 /*
-        object.difineProperties(obj,props)
+        object.defineProperties(obj,props)
         *argument
             obj => 将被修改的目标对象 type:obj
             props => 将被定义的key值其属性 type:obj
@@ -44,7 +44,7 @@
 */
 
 /*
-         object.difineProperty(obj,props,des)
+         object.di]efineProperty(obj,props,des)
          *argument
             obj => 将被修改的目标对象 type:obj
             props => key的name type:string
@@ -55,3 +55,14 @@
             修改目标对象，像目标对象中添加一个key并描述key的属性
             包括 writeable value get set enumerable 等属性
  */
+
+/*
+        object.entries(obj)
+        *argument
+            obj => 将被修改的对象 type:obj
+        *return
+            返回obj的key，value组成的二维数组 type:array
+            [[key1,value1],[key2,value2]]
+        *function
+            返回可枚举的key，value数组
+*/
