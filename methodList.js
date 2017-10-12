@@ -44,7 +44,7 @@
 */
 
 /*
-         object.di]efineProperty(obj,props,des)
+         object.defineProperty(obj,props,des)
          *argument
             obj => 将被修改的目标对象 type:obj
             props => key的name type:string
@@ -66,3 +66,58 @@
         *function
             返回可枚举的key，value数组
 */
+
+/*
+        object.is(a,b)
+        *argument
+            a => 被比较的对象 type:any
+            b => 被比较的对象 type:any
+        *return
+            返回比较的结果  type:boolean
+        *function
+            undefined === undefined
+            null === null
+            true|false === true|false
+            string === string
+            number === number
+            +0|-0 === +0|-0
+            object.is(NaN,NaN) return true;
+            不会作类型转换
+            ==会造成隐式类型转换
+*/
+
+/*
+         object.keys(obj)
+         *argument
+            obj => 目标对象 type : obj
+         *return
+            返回所有可枚举属性的字符串数组，Object.prototype.tostring.call(obj) = [object array]
+            则返回 数组下标的数组
+         *function
+            返回可枚举的属性数组
+*/
+
+/*
+        obj.hasOwnProperty(prop)
+        *argument
+            prop => 要检测的属性
+        *return
+            返回boolean
+        *function
+            检测obj中是否存在prop属性
+            返回true或false
+            判断继承属性将返回false
+
+            ！！！遍历属性的时候可以过滤掉继承属性
+ */
+
+/*
+        object.values(obj)
+        *argument
+            obj => 目标对象 type:obj
+        *return
+            返回一个数组，包含obj的所有value
+        *function
+            返回一个数组，包含obj的所有value
+
+ */
