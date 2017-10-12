@@ -1,3 +1,57 @@
 /**
  * Created by yuqiangao on 2017/10/12.
  */
+//Object
+
+/*
+        object.assign(target,..sources);
+        *argument
+            target => 目标对象 type:obj
+            source => 源对象 type:obj
+        *return
+            target
+        *function
+            对象浅复制且会跳过那些值为 null 或 undefined的源对象
+            若key相同 则会用源对象的值替代目标对象的值
+            该方法会修改目标对象
+*/
+
+/*
+        object.create(proto[,propertiesObject])
+        *argument
+            proto => 新对象的原型对象 type:obj
+            propertiesObject => 可选，新对象key值 必须是null或obj类型
+                                可以设置 所对应的value的get／set方法  出发相应事件
+                                可以设置相应的writable属性表示是否只读
+        *return
+            proto{
+                     propertiesObject:value;
+                 }
+        *function
+            创建对象  实现对象的继承
+*/
+
+/*
+        object.difineProperties(obj,props)
+        *argument
+            obj => 将被修改的目标对象 type:obj
+            props => 将被定义的key值其属性 type:obj
+        *return
+            被修改的目标对象
+        *function
+            修改目标对象，像目标对象中添加一个或多个key并描述key的属性
+            包括 writeable value get set enumerable 等属性
+*/
+
+/*
+         object.difineProperty(obj,props,des)
+         *argument
+            obj => 将被修改的目标对象 type:obj
+            props => key的name type:string
+            des => key的属性描述 type:obj
+        *return
+            被修改的目标对象
+        *function
+            修改目标对象，像目标对象中添加一个key并描述key的属性
+            包括 writeable value get set enumerable 等属性
+ */
