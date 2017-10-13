@@ -29,7 +29,7 @@ var CatA = new Cat('tom');
 
 
 //运算符 instanceof
-// 用于检查 一个对象是否存在一个被期望的构造函数
+// 用于检查 一个对象是否存在一个被期望的构造函数  或检查该对象是否是一个被期望类的实例
 
 
 // CatA instanceof Animal  true
