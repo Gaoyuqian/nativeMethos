@@ -329,3 +329,43 @@ updateComponent = () => {
 ```
 # watcher对象会通过updateComponent方法来更新世图，vue会默认将watcher存在一个队列里，在下一个tick时，异步的更新视图，优化了性能。
 
+## VNode
+# 在大型应用中，我们不应当直接去操作修改一些dom节点来达到修改视图的目的，
+# VNode是一个虚拟的dom树，在每次检测到更新的时候对VNode进行修改并重绘到页面上。不需要操作真实的dom，只需要操作对应的js对象。大大的提高了性能。
+# 在对比VNode的过程中，采用diff算法，diff算法是通过同层的树节点进行比较，所以时间复杂度是O（n），
+# 在比较中，如果两个节点被认为是同一个VNode，则会进行深度的比较，得出最小差异，负责直接删除旧有的dom节点，创建新的节点。
+
+```javascript
+/*
+  判断两个VNode节点是否是同一个节点，需要满足以下条件
+  key相同
+  tag（当前节点的标签名）相同
+  isComment（是否为注释节点）相同
+  是否data（当前节点对应的对象，包含了具体的一些数据信息，是一个VNodeData类型，可以参考VNodeData类型中的数据信息）都有定义
+  当标签是<input>的时候，type必须相同
+*/
+function sameVnode (a, b) {
+  return (
+    a.key === b.key &&
+    a.tag === b.tag &&
+    a.isComment === b.isComment &&
+    isDef(a.data) === isDef(b.data) &&
+    sameInputType(a, b)
+  )
+}
+
+// Some browsers do not support dynamically changing type for <input>
+// so they need to be treated as different nodes
+/*
+  判断当标签是<input>的时候，type是否相同
+  某些浏览器不支持动态修改<input>类型，所以他们被视为不同类型
+*/
+function sameInputType (a, b) {
+  if (a.tag !== 'input') return true
+  let i
+  const typeA = isDef(i = a.data) && isDef(i = i.attrs) && i.type
+  const typeB = isDef(i = b.data) && isDef(i = i.attrs) && i.type
+  return typeA === typeB
+}
+```
+
