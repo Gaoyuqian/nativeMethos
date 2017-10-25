@@ -1,4 +1,4 @@
-##new vue都干了什么？？？
+## new vue都干了什么？？？
 
 
 - const vm = new Vue({
