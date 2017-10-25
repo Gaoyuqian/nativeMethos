@@ -6,7 +6,7 @@ const vm = new Vue({
 })
 ```
 
-#在执行new vue的时候，vue的构造类，只干了一件事情，那就是调用vue本身的init方法
+# 在执行new vue的时候，vue的构造类，只干了一件事情，那就是调用vue本身的init方法
 
 ```javascript  
     function Vue(options){
