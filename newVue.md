@@ -6,7 +6,7 @@ const vm = new Vue({
 })
 ```
 
->在执行new vue的时候，vue的构造类，只干了一件事情，那就是调用vue本身的init方法
+#在执行new vue的时候，vue的构造类，只干了一件事情，那就是调用vue本身的init方法
 
 ```javascript  
     function Vue(options){
@@ -89,7 +89,7 @@ Vue.prototype._init = function (options?: Object) {
     }
   }
 ```
-> init主要做了两件事
+# init主要做了两件事
 - 1.初始化生命周期，事件函数，render函数，调用beforecreate钩子，初始化props，methods，data，computed，watch，调用create钩子。
 - 2.$mount 挂载组件 
 
@@ -119,8 +119,8 @@ export function initState (vm: Component) {
 - initState主要是初始化props，methods，data，computed，watch
 
 ## 双向绑定
-> 在初始化data的时候 会把所有的data对象里的数据调用initData方法
-> initData方法做了什么事？？？
+# 在初始化data的时候 会把所有的data对象里的数据调用initData方法
+# initData方法做了什么事？？？
 ```javascript
 function initData (vm: Component) {
 
@@ -168,8 +168,8 @@ function initData (vm: Component) {
 }
 ```
 
-> 当使用set添加data的时候， 会调用difineProperty中的setter方法，会有一个特定的对象（Dep对象）同志watcher对象更新view 完成双向绑定
-> vue重写了一部分Array方法 通过递归来对数组成员进行双向绑定
+# 当使用set添加data的时候， 会调用difineProperty中的setter方法，会有一个特定的对象（Dep对象）同志watcher对象更新view 完成双向绑定
+# vue重写了一部分Array方法 通过递归来对数组成员进行双向绑定
 
 ## Observer类
 
@@ -225,7 +225,7 @@ function copyAugment (target: Object, src: Object, keys: Array<string>) {
   }
 }
 ```
- > Observer主要是用于对对象进行绑定 如果为数组，则使用 observeArray 进行绑定，如果是对象，则使用walk进行绑定
+ # Observer主要是用于对对象进行绑定 如果为数组，则使用 observeArray 进行绑定，如果是对象，则使用walk进行绑定
 
  ## 此处放置  observeArray 和 walk方法代码
  ## 结束
@@ -294,5 +294,7 @@ export const arrayMethods = Object.create(arrayProto)
   })
 })
  ```
+
+ # 
 
 
