@@ -2,7 +2,7 @@
 
 - Vue提供了四个事件api分别是 $on,$once,$off,$emit.
 
-##初始化事件
+- 初始化事件
 
 - 初始化事件在vm上创建一个_events对象，用来存放时间。
 ```javascript
