@@ -119,7 +119,7 @@ export function initState (vm: Component) {
 - initState主要是初始化props，methods，data，computed，watch
 
 ## 双向绑定
-# 在初始化data的时候 会把所有的data对象里的数据调用initData方法
+- 在初始化data的时候 会把所有的data对象里的数据调用initData方法
 # initData方法做了什么事？？？
 ```javascript
 function initData (vm: Component) {
@@ -168,8 +168,8 @@ function initData (vm: Component) {
 }
 ```
 
-# 当使用set添加data的时候， 会调用difineProperty中的setter方法，会有一个特定的对象（Dep对象）同志watcher对象更新view 完成双向绑定
-# vue重写了一部分Array方法 通过递归来对数组成员进行双向绑定
+- 当使用set添加data的时候， 会调用difineProperty中的setter方法，会有一个特定的对象（Dep对象）同志watcher对象更新view 完成双向绑定
+- vue重写了一部分Array方法 通过递归来对数组成员进行双向绑定
 
 ## Observer类
 
@@ -227,8 +227,8 @@ function copyAugment (target: Object, src: Object, keys: Array<string>) {
 ```
  # Observer主要是用于对对象进行绑定 如果为数组，则使用 observeArray 进行绑定，如果是对象，则使用walk进行绑定
 
- ## 此处放置  observeArray 和 walk方法代码
- ## 结束
+ - 此处放置  observeArray 和 walk方法代码
+ - 结束
 
  ```javascript
  /*
@@ -295,9 +295,9 @@ export const arrayMethods = Object.create(arrayProto)
 })
  ```
 
- # 重写了array的几个方法，
+ - 以上重写了array的几个方法，
 
- ##template编译 （template是如何被编译成render function的）
+ - template编译 （template是如何被编译成render function的）
  ```javascript
 function baseCompile (
   template: string,
@@ -322,18 +322,19 @@ function baseCompile (
   }
 }
  ```
+
 ```javascript
 updateComponent = () => {
     vm._update(vm._render(), hydrating)
 }
 ```
-# watcher对象会通过updateComponent方法来更新世图，vue会默认将watcher存在一个队列里，在下一个tick时，异步的更新视图，优化了性能。
+- watcher对象会通过updateComponent方法来更新世图，vue会默认将watcher存在一个队列里，在下一个tick时，异步的更新视图，优化了性能。
 
 ## VNode
-# 在大型应用中，我们不应当直接去操作修改一些dom节点来达到修改视图的目的，
-# VNode是一个虚拟的dom树，在每次检测到更新的时候对VNode进行修改并重绘到页面上。不需要操作真实的dom，只需要操作对应的js对象。大大的提高了性能。
-# 在对比VNode的过程中，采用diff算法，diff算法是通过同层的树节点进行比较，所以时间复杂度是O（n），
-# 在比较中，如果两个节点被认为是同一个VNode，则会进行深度的比较，得出最小差异，负责直接删除旧有的dom节点，创建新的节点。
+- 在大型应用中，我们不应当直接去操作修改一些dom节点来达到修改视图的目的，
+- VNode是一个虚拟的dom树，在每次检测到更新的时候对VNode进行修改并重绘到页面上。不需要操作真实的dom，只需要操作对应的js对象。大大的提高了性能。
+- 在对比VNode的过程中，采用diff算法，diff算法是通过同层的树节点进行比较，所以时间复杂度是O（n），
+- 在比较中，如果两个节点被认为是同一个VNode，则会进行深度的比较，得出最小差异，负责直接删除旧有的dom节点，创建新的节点。
 
 ```javascript
 /*
