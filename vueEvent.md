@@ -1,16 +1,16 @@
 ### Vue事件API
 
-#Vue提供了四个事件api分别是 $on,$once,$off,$emit.
+- Vue提供了四个事件api分别是 $on,$once,$off,$emit.
 
 ##初始化事件
 
-#初始化事件在vm上创建一个_events对象，用来存放时间。
+- 初始化事件在vm上创建一个_events对象，用来存放时间。
 ```javascript
 {
     eventName:[func1,func2,func3]
 }
 ```
-#存放事件名以及对应的执行方法。
+- 存放事件名以及对应的执行方法。
 ```javascript
 //初始化事件
 export function initEvents(vm:Component){
@@ -26,7 +26,7 @@ export function initEvents(vm:Component){
 ```
 
 ## $on
-# $on方法用来监听一个实例上的自定义事件，可以由$emit触发
+- $on方法用来监听一个实例上的自定义事件，可以由$emit触发
  ```javascript
 Vue.prototype.$on = function(event:string|Array<string>,fn:Function):Component{
     const vm:Component = this
@@ -47,7 +47,7 @@ Vue.prototype.$on = function(event:string|Array<string>,fn:Function):Component{
 
 
  ## $once
- # $once 负责监听一个只能触发一次的事件，在触发以后会自动移除该事件
+ - $once 负责监听一个只能触发一次的事件，在触发以后会自动移除该事件
 
 ```javascript
 Vue.prototype.$once = function(event:string,fn:Function):Component{
@@ -67,7 +67,7 @@ Vue.prototype.$once = function(event:string,fn:Function):Component{
 ```
 
 ## $off 
-# $off用来移除自定义事件
+- $off用来移除自定义事件
 ```javascript
 Vue.prototype.$off = function(event?:string|Array<string>,fn?:Function):Component{
     const vm:Component = this
@@ -112,7 +112,7 @@ Vue.prototype.$off = function(event?:string|Array<string>,fn?:Function):Componen
 
 
 ## $emit
-# $emit用来触发指定的自定义事件
+- $emit用来触发指定的自定义事件
 
 ```javascript
 Vue.prototype.$emit = function (event: string): Component {
