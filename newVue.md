@@ -225,7 +225,8 @@ function copyAugment (target: Object, src: Object, keys: Array<string>) {
   }
 }
 ```
- # Observer主要是用于对对象进行绑定 如果为数组，则使用 observeArray 进行绑定，如果是对象，则使用walk进行绑定
+ - Observer主要是用于对对象进行绑定 如果为数组，则使用 observeArray 进行绑定，如果是对象，则使用walk进行绑定
+
 
  - 此处放置  observeArray 和 walk方法代码
  - 结束
@@ -297,7 +298,7 @@ export const arrayMethods = Object.create(arrayProto)
 
  - 以上重写了array的几个方法，
 
- - template编译 （template是如何被编译成render function的）
+ ## template编译 （template是如何被编译成render function的）
  ```javascript
 function baseCompile (
   template: string,
