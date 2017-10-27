@@ -370,9 +370,9 @@ function sameInputType (a, b) {
 ```
 
 ## nextTick
-# dataUpdate之后会将update放入一个队列并且将队列变为wait状态，并调用flushSchedulerQueue方法执行watcher的run函数，用来更新视图
-# vue的视图是异步更新的。
+- dataUpdate之后会将update放入一个队列并且将队列变为wait状态，并调用flushSchedulerQueue方法执行watcher的run函数，用来更新视图
+- vue的视图是异步更新的。
 
 
 ## 依赖收集
-# 当未使用的data发生变化时，不会触发试图的更新。
+- 当未使用的data发生变化时，不会触发试图的更新。
