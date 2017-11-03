@@ -316,7 +316,7 @@ function baseCompile (
   optimize(ast, options)
   /*根据ast树生成所需的code（内部包含render与staticRenderFns）*/
   const code = generate(ast, options)
-  return {
+  return {s
     ast,
     render: code.render,
     staticRenderFns: code.staticRenderFns

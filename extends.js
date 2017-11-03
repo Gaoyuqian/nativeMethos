@@ -57,3 +57,13 @@ var CatB = new Cat1('tom');
 
 
 
+
+// 柯里化
+
+function plus(a){
+    function next(b){
+        return plus(a+b);
+    }
+    next.toString=()=>a;
+    return next;
+}
